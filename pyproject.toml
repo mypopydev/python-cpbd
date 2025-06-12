@@ -5,25 +5,32 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cpbd"
 version = "1.0.7"
-description = "A perceptual-based no-reference objective image sharpness metric based on the cumulative probability of blur detection"
+description = "A Python implementation of the CPBD (Cumulative Probability of Blur Detection) sharpness metric"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {text = "Other/Proprietary License"}
+license = "BSD-3-Clause"
 authors = [
-    {name = "Niranjan D. Narvekar", email = "nnarveka@asu.edu"},
-    {name = "Lina J. Karam", email = "karam@asu.edu"}
+    {name = "Jun Zhao", email = "junzhao@mypopydev.com"}
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
-    "License :: Other/Proprietary License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "Topic :: Scientific/Engineering :: Image Recognition"
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+keywords = [
+    "sharpness",
+    "metric",
+    "blur",
+    "cumulative probability",
+    "no-reference",
+    "objective",
+    "perceptual"
 ]
 dependencies = [
     "matplotlib>=3.0.0",
@@ -37,8 +44,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=6.0.0",
-    "tox>=3.24.0"
+    "pytest>=7.0.0",
+    "tox>=4.0.0"
 ]
 
 [tool.setuptools]

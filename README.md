@@ -30,10 +30,10 @@ pip install cpbd
 import cpbd
 from imageio import imread
 
-# 读取灰度图像
+# Read grayscale image
 input_image = imread('your_image.jpg', as_gray=True)
 
-# 计算清晰度
+# Calculate sharpness
 sharpness = cpbd.compute(input_image)
 print(f"CPBD sharpness score: {sharpness}")
 ```
@@ -41,53 +41,53 @@ print(f"CPBD sharpness score: {sharpness}")
 ## Development
 
 ```bash
-git clone https://github.com/0x64746b/python-cpbd.git
+git clone https://github.com/mypopydev/python-cpbd.git
 cd python-cpbd
 pip install -e ".[dev]"
 ```
 
 ### Running Tests
 
-项目包含完整的测试套件，使用 pytest 运行。测试数据来自原始 MATLAB 实现，确保 Python 端口的结果与参考实现一致。
+The project includes a complete test suite using pytest. The test data comes from the original MATLAB implementation to ensure the Python port produces results consistent with the reference implementation.
 
-#### 运行所有测试
+#### Run All Tests
 
 ```bash
 pytest
 ```
 
-#### 运行特定测试文件
+#### Run Specific Test File
 
 ```bash
 pytest tests/test_compute.py
 ```
 
-#### 显示详细测试信息
+#### Show Detailed Test Information
 
 ```bash
 pytest -vv --tb=long -s
 ```
 
-测试选项说明：
-- `-vv`: 显示详细输出
-- `--tb=long`: 显示完整的错误回溯
-- `-s`: 显示打印输出
-- `--durations=0`: 显示所有测试的耗时
+Test options explanation:
+- `-vv`: Show verbose output
+- `--tb=long`: Show full error traceback
+- `-s`: Show print output
+- `--durations=0`: Show timing for all tests
 
-#### 测试内容
+#### Test Contents
 
-测试套件包含以下主要测试：
-1. `test_marziliano_method`: 验证 Marziliano 方法计算边缘宽度的准确性
-2. `test_calculate_sharpness_metric`: 验证清晰度指标计算的准确性
+The test suite includes the following main tests:
+1. `test_marziliano_method`: Validates the accuracy of edge width calculation using the Marziliano method
+2. `test_calculate_sharpness_metric`: Validates the accuracy of the sharpness metric calculation
 
-测试数据存储在 `tests/data/` 目录下，包括：
-- 参考图像数据
-- Sobel 边缘检测结果
-- Canny 边缘检测结果
-- Marziliano 宽度结果
+Test data is stored in the `tests/data/` directory, including:
+- Reference image data
+- Sobel edge detection results
+- Canny edge detection results
+- Marziliano width results
 
 ## Performance
 
 The following graph visualizes the accuracy of this port in comparison with the reference implementation when tested on the [images](http://lina.faculty.asu.edu/Software/CPBDM/LIVE_Images_GBlur.zip) of the [LIVE database](http://live.ece.utexas.edu/research/quality/subjective.htm):
 
-![Performance on LIVE database](https://raw.githubusercontent.com/0x64746b/python-cpbd/master/tests/data/performance_LIVE.png) 
+![Performance on LIVE database](https://raw.githubusercontent.com/mypopydev/python-cpbd/master/tests/data/performance_LIVE.png) 

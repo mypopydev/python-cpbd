@@ -3,7 +3,7 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
 # Always prefer setuptools over distutils
-import setuptools
+from setuptools import setup
 
 # To use a consistent encoding
 from codecs import open
@@ -12,69 +12,20 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+# Read the contents of README.md
+with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 
 
-setuptools.setup(
-    name = 'cpbd',
-    version = '1.0.7',
-    description = 'Calculate the sharpness of an image with the CPBD metric',
-    long_description = long_description,
-    long_description_content_type = 'text/markdown',
-    url = 'https://github.com/0x64746b/python-cpbd',
-    author = 'D.',
-    author_email = 'dtk@gmx.de',
-    license='Other/Proprietary License',
-
-    keywords = [
-        'sharpness',
-        'metric',
-        'blur',
-        'cumulative probability',
-        'no-reference',
-        'objective',
-        'perceptual',
-    ],
-
-    classifiers = [
-        'Development Status :: 5 - Production/Stable',
-
-        # Indicate who your project is intended for
-        'Intended Audience :: Science/Research',
-        'Topic :: Scientific/Engineering',
-
-        # Pick your license as you wish (should match "license" above)
-        'License :: Other/Proprietary License',
-
-        # Specify the Python versions you support here
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
-    ],
-
-    packages = ['cpbd'],
-    setup_requires = [
-        'pytest-runner',
-    ],
-    install_requires = [
-        'matplotlib>=3.0.0',
-        'numpy>=1.20.0',
-        'scikit-image>=0.18.0',
-        'scipy>=1.7.0',
-        'imageio>=2.9.0',
-        'pandas>=1.3.0',
-        'scikit-learn>=1.0.0',
-    ],
-    tests_require = ['pytest'],
-    extras_require = {
-        'dev': [
-            'pytest>=6.0.0',
-            'tox>=3.24.0',
-        ],
-    },
+setup(
+    name="cpbd",
+    version="1.0.7",
+    description="A Python implementation of the CPBD (Cumulative Probability of Blur Detection) sharpness metric",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    author="Jun Zhao",
+    author_email="junzhao@mypopydev.com",
+    url="https://github.com/mypopydev/python-cpbd",
+    packages=["cpbd"],
+    python_requires=">=3.7"
 )
