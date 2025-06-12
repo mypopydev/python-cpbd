@@ -13,7 +13,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
@@ -22,6 +22,7 @@ setuptools.setup(
     version = '1.0.7',
     description = 'Calculate the sharpness of an image with the CPBD metric',
     long_description = long_description,
+    long_description_content_type = 'text/markdown',
     url = 'https://github.com/0x64746b/python-cpbd',
     author = 'D.',
     author_email = 'dtk@gmx.de',
@@ -47,31 +48,33 @@ setuptools.setup(
         # Pick your license as you wish (should match "license" above)
         'License :: Other/Proprietary License',
 
-        # Specify the Python versions you support here. In particular, ensure
-        # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        # Specify the Python versions you support here
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
 
     packages = ['cpbd'],
     setup_requires = [
         'pytest-runner',
-        'pypandoc>=1.4',
     ],
     install_requires = [
-        'matplotlib>=2.0.0',  # This should be a dependency of `scikit-image`
-        'numpy>=1.11.1',
-        'scikit-image>=0.12.3',
-        'scipy>=0.18.1',
+        'matplotlib>=3.0.0',
+        'numpy>=1.20.0',
+        'scikit-image>=0.18.0',
+        'scipy>=1.7.0',
+        'imageio>=2.9.0',
+        'pandas>=1.3.0',
+        'scikit-learn>=1.0.0',
     ],
     tests_require = ['pytest'],
     extras_require = {
         'dev': [
-            'pandas>=0.19.2',
-            'pytest>=3.0.0',
-            'scikit-learn>=0.18.1',
-            'tox>=2.9.1',
+            'pytest>=6.0.0',
+            'tox>=3.24.0',
         ],
     },
 )

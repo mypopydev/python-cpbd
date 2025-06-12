@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpbd"
+version = "1.0.7"
+description = "A perceptual-based no-reference objective image sharpness metric based on the cumulative probability of blur detection"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "Other/Proprietary License"}
+authors = [
+    {name = "Niranjan D. Narvekar", email = "nnarveka@asu.edu"},
+    {name = "Lina J. Karam", email = "karam@asu.edu"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Recognition"
+]
+dependencies = [
+    "matplotlib>=3.0.0",
+    "numpy>=1.20.0",
+    "scikit-image>=0.18.0",
+    "scipy>=1.7.0",
+    "imageio>=2.9.0",
+    "pandas>=1.3.0",
+    "scikit-learn>=1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "tox>=3.24.0"
+]
+
+[tool.setuptools]
+packages = ["cpbd"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"] 
